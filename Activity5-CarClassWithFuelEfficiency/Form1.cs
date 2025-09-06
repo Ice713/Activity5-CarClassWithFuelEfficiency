@@ -16,5 +16,24 @@ namespace Activity5_CarClassWithFuelEfficiency
         {
             InitializeComponent();
         }
+
+        private void buttonMaxDistance_Click(object sender, EventArgs e)
+        {
+            try
+                {
+                Car car = new Car(double.Parse(numericUpDownFuelCapacity.Text), double.Parse(numericUpDownFuelEfficiency.Text));
+              
+                
+                labelOutput.Text = $"Fuel Capacity: {car.FuelCapacity}L\nFuel Efficiency: {car.FuelEfficiency} km/LMaximum Distance: {maxDistance:F2} miles";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter valid numeric values for fuel efficiency and fuel in tank.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
