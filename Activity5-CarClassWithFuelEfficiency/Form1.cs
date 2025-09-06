@@ -24,7 +24,7 @@ namespace Activity5_CarClassWithFuelEfficiency
                 Car car = new Car(double.Parse(numericUpDownFuelCapacity.Text), double.Parse(numericUpDownFuelEfficiency.Text));
               
                 
-                labelOutput.Text = $"Fuel Capacity: {car.FuelCapacity}L\nFuel Efficiency: {car.FuelEfficiency} km/LMaximum Distance: {maxDistance:F2} miles";
+                labelOutput.Text = $"Fuel Capacity: {car.FuelCapacity}L\nFuel Efficiency: {car.FuelEfficiency} km/LMaximum Distance: {car.MaxDistance:F2} km";
             }
             catch (FormatException)
             {
